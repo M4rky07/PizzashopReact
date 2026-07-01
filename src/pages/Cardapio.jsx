@@ -11,29 +11,32 @@ const Cardapio = () => {
   const [busca, setBusca] = useState("");
 
   useEffect(() => {
-    api.get("/pizzas").then((response) => {
-      setPizzas(response.data);
-    });
+    const fetchData = async () => {
+      try {
+        const [pizzasRes, bebidasRes] = await Promise.all([
+          api.get("/pizzas"),
+          api.get("/bebidas"),
+        ]);
 
-    api.get("/bebidas").then((response) => {
-      setBebidas(response.data);
-    });
+        setPizzas(pizzasRes.data);
+        setBebidas(bebidasRes.data);
+      } catch (error) {
+        console.error("Erro ao buscar cardápio:", error);
+      }
+    };
+
+    fetchData();
   }, []);
-
-  console.log(bebidas); 
 
   const pizzasFiltradas =
     categoriaSelecionada === "Todas"
       ? pizzas
       : pizzas.filter(
-          (pizza) =>
-            pizza.categoria === categoriaSelecionada
+          (pizza) => pizza.categoria === categoriaSelecionada
         );
 
   const resultadoBusca = pizzasFiltradas.filter((pizza) =>
-    pizza.nome
-      .toLowerCase()
-      .includes(busca.toLowerCase())
+    pizza.nome.toLowerCase().includes(busca.toLowerCase())
   );
 
   return (
@@ -62,66 +65,20 @@ const Cardapio = () => {
       </div>
 
       <div className="d-flex justify-content-center flex-wrap gap-2 mb-4">
-        <Button
-          variant={
-            categoriaSelecionada === "Todas"
-              ? "warning"
-              : "dark"
-          }
-          onClick={() =>
-            setCategoriaSelecionada("Todas")
-          }
-        >
-          Todas
-        </Button>
-
-        <Button
-          variant={
-            categoriaSelecionada === "Tradicional"
-              ? "warning"
-              : "dark"
-          }
-          onClick={() =>
-            setCategoriaSelecionada("Tradicional")
-          }
-        >
-          Tradicionais
-        </Button>
-
-        <Button
-          variant={
-            categoriaSelecionada === "Especial"
-              ? "warning"
-              : "dark"
-          }
-          onClick={() =>
-            setCategoriaSelecionada("Especial")
-          }
-        >
-          Especiais
-        </Button>
-
-        <Button
-          variant={
-            categoriaSelecionada === "Doce"
-              ? "warning"
-              : "dark"
-          }
-          onClick={() =>
-            setCategoriaSelecionada("Doce")
-          }
-        >
-          Doces
-        </Button>
+        {["Todas", "Tradicional", "Especial", "Doce"].map((cat) => (
+          <Button
+            key={cat}
+            variant={categoriaSelecionada === cat ? "warning" : "dark"}
+            onClick={() => setCategoriaSelecionada(cat)}
+          >
+            {cat === "Todas" ? "Todas" : cat + "s"}
+          </Button>
+        ))}
       </div>
 
       <Row>
         {resultadoBusca.map((pizza) => (
-          <Col
-            md={4}
-            className="mb-4"
-            key={pizza.id}
-          >
+          <Col md={4} className="mb-4" key={pizza.id}>
             <PizzaCard pizza={pizza} />
           </Col>
         ))}
@@ -137,19 +94,14 @@ const Cardapio = () => {
       >
         🥤 Bebidas
       </h2>
-      <Row>
-  {bebidas.map((bebida) => (
-    <Col
-      md={4}
-      className="mb-4"
-      key={bebida.id}
-    >
-      <BebidaCard bebida={bebida} />
-    </Col>
-  ))}
-  </Row>
 
-      
+      <Row>
+        {bebidas.map((bebida) => (
+          <Col md={4} className="mb-4" key={bebida.id}>
+            <BebidaCard bebida={bebida} />
+          </Col>
+        ))}
+      </Row>
     </Container>
   );
 };
