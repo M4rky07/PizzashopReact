@@ -1,0 +1,145 @@
+{
+"categorias": [
+{
+"id": 1,
+"nome": "Tradicional"
+},
+{
+"id": 2,
+"nome": "Especial"
+},
+{
+"id": 3,
+"nome": "Doce"
+}
+],
+
+"pizzas": [
+{
+"id": 1,
+"tipo": "pizza",
+"nome": "Calabresa",
+"descricao": "Molho de tomate, mussarela, calabresa e cebola.",
+"preco": 39.9,
+"categoria": "Tradicional",
+"imagem": "/imagens/calabresa.jpg"
+},
+{
+"id": 2,
+"tipo": "pizza",
+"nome": "Mussarela",
+"descricao": "Molho de tomate, mussarela e orégano.",
+"preco": 36.9,
+"categoria": "Tradicional",
+"imagem": "/imagens/mussarela.jpg"
+},
+{
+"id": 3,
+"tipo": "pizza",
+"nome": "Portuguesa",
+"descricao": "Presunto, ovos, cebola, ervilha e mussarela.",
+"preco": 45.9,
+"categoria": "Especial",
+"imagem": "/imagens/calabresa.jpg"
+},
+{
+"id": 4,
+"tipo": "pizza",
+"nome": "Frango com Catupiry",
+"descricao": "Frango desfiado com catupiry.",
+"preco": 47.9,
+"categoria": "Especial",
+"imagem": "/imagens/frangok.jpg"
+},
+{
+"id": 5,
+"tipo": "pizza",
+"nome": "Chocolate",
+"descricao": "Chocolate ao leite e granulado.",
+"preco": 42.9,
+"categoria": "Doce",
+"imagem": "/imagens/chocolate.jpg"
+},
+{
+"id": 6,
+"tipo": "pizza",
+"nome": "Romeu e Julieta",
+"descricao": "Goiabada com queijo.",
+"preco": 43.9,
+"categoria": "Doce",
+"imagem": "/imagens/romueEjulieta.jpg"
+}
+],
+
+"bebidas": [
+{
+"id": 1,
+"tipo": "bebida",
+"nome": "Coca-Cola",
+"descricao": "Refrigerante Coca-Cola gelado.",
+"preco": 12,
+"imagem": "/imagens/coquinha.jpg"
+},
+{
+"id": 2,
+"tipo": "bebida",
+"nome": "Guaraná",
+"descricao": "Refrigerante Guaraná Antarctica.",
+"preco": 10,
+"imagem": "/imagens/guarana.jpg"
+},
+{
+"id": 3,
+"tipo": "bebida",
+"nome": "Água Mineral",
+"descricao": "Água mineral sem gás.",
+"preco": 3,
+"imagem": "/imagens/aguinhaPai.jpg"
+}
+],
+
+"usuarios": [
+{
+"id": 1,
+"nome": "Administrador",
+"email": "[admin@pizzaria.com](mailto:admin@pizzaria.com)",
+"senha": "123456",
+"tipo": "admin"
+},
+{
+"id": 2,
+"nome": "João Silva",
+"email": "[joao@email.com](mailto:joao@email.com)",
+"senha": "123456",
+"tipo": "cliente"
+}
+],
+
+"pedidos": [
+{
+"id": 1001,
+"cliente": "João Silva",
+"telefone": "(83) 99999-9999",
+"endereco": "Rua das Palmeiras, 123",
+"status": "Preparando",
+"total": 91.8,
+"itens": [
+{
+"produto": "Calabresa",
+"quantidade": 1,
+"preco": 39.9
+},
+{
+"produto": "Frango com Catupiry",
+"quantidade": 1,
+"preco": 47.9
+},
+{
+"produto": "Água Mineral",
+"quantidade": 1,
+"preco": 3
+}
+]
+}
+]
+}
