@@ -1,16 +1,108 @@
-# React + Vite
+# 🍕 PizzaShop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação web para pedidos de pizzaria desenvolvida com React no frontend e Node.js + Express no backend.
 
-Currently, two official plugins are available:
+O sistema permite que o cliente escolha pizzas e bebidas, adicione produtos ao carrinho, informe seus dados e finalize o pedido pelo WhatsApp.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Listagem de pizzas
+- Listagem de bebidas
+- Carrinho de compras
+- Alteração da quantidade dos produtos
+- Remoção de itens do carrinho
+- Cálculo automático do valor total
+- Finalização do pedido
+- Envio do pedido para o WhatsApp
+- Integração com API própria
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend
+
+- React
+- Vite
+- React Router
+- Context API
+- Axios
+- React Bootstrap
+
+### Backend
+
+- Node.js
+- Express
+- CORS
+
+## 📂 Estrutura do projeto
+
+```
+Frontend
+├── React
+├── Context API
+├── Axios
+└── React Bootstrap
+
+Backend
+├── Express
+├── Routes
+├── Services
+└── db.json
+```
+
+## ▶️ Como executar
+
+### Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+### Backend
+
+```bash
+npm install
+npm start
+```
+
+## 📸 Demonstração
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="images/home.png" width="450"><br>
+      <strong>Página Inicial</strong>
+    </td>
+    <td align="center">
+      <img src="images/carrinho.png" width="450"><br>
+      <strong>Carrinho</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/checkout.png" width="450"><br>
+      <strong>Checkout</strong>
+    </td>
+    <td align="center">
+      <img src="images/whats.png" width="450"><br>
+      <strong>Pedido no WhatsApp</strong>
+    </td>
+  </tr>
+</table>
+
+
+
+## 📌 Próximas melhorias
+
+- Painel administrativo
+- Banco de dados
+- Autenticação de administrador
+- Acompanhamento de pedidos
+- Histórico de pedidos
+
+## 👨‍💻 Autor
+
+**Júnior Gomes**
+
+
